@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Rose
+  - Sunflower
+  - Tulip
+  - Hydrangea
+  - Lotus
+  - Rice
+  - Shovel
+  - Sickle
+  - wrhouse
+  - Pigsty
+  - treeWall
+  - Tomato
+  - Corn
+  - Eggplant
+  - Pineapple
+  - trough
+  - destroytree
+  - wall
+  - Gun_green
+  - Enemy
+  - bullet
+  - PlayGround
+  - Gamer
+  - Lake
+  - PIG
+  - Pig
+  - Chicken
+  - Fish
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - minimap
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
