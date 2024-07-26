@@ -8,7 +8,7 @@ public class LoadSence : MonoBehaviour
 
     public GameObject Player;
     public GameObject PlayerHUDC;
-    public GameObject nothasTicket_img;
+
     void Start()
     {
         
@@ -18,18 +18,15 @@ public class LoadSence : MonoBehaviour
     {
         
     }
-    private IEnumerator nothasTicket()
-    {
-        nothasTicket_img.SetActive(true);
-        yield return new WaitForSeconds(2f);
-        nothasTicket_img.SetActive(false);
-    }
+    
 
+
+    
     public void loadSence()
     {
         if(GameLoad.instance.numberTicket < 1)
         {
-            StartCoroutine(nothasTicket());
+            StartCoroutine(bagHUDC.instance.nothasTicket());
         }
         if(GameLoad.instance.numberTicket>=1) 
         {

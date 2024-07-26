@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,8 @@ public class DollarHUDC : MonoBehaviour
     public bool isDolarActive = false;
     public GameObject WrSellAnimalnotToMature_img;
     private bool isWrSellAnimalnotToMature_imgActive = true;
+    public int number_Dollar;
+    public TextMeshProUGUI Dollar_text;
 
     private void Awake()
     {
@@ -34,7 +37,7 @@ public class DollarHUDC : MonoBehaviour
 
     private void Update()
     {
-
+        Dollar_text.SetText(number_Dollar.ToString());
         if (isDolarActive)
         {
             Cursor.SetCursor(dolarCursor, Vector2.zero, CursorMode.Auto);

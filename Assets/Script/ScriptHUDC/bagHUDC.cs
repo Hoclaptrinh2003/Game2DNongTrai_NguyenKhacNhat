@@ -21,7 +21,7 @@ public class bagHUDC : MonoBehaviour
     public GameObject notEnoughmoney_img;
     public GameObject max_buy_img;
     public List<GameObject> Release;
-
+    public GameObject nothasTicket_img;
     public bool isDestroy = false;
 
     int quantity;
@@ -420,6 +420,51 @@ public class bagHUDC : MonoBehaviour
         }
         AnimalShopHUDC.instance.number_quantity_Buy--;
         AnimalShopHUDC.instance.input_quantity_Buy.text = AnimalShopHUDC.instance.number_quantity_Buy.ToString();
+    }
+
+
+    public void add_Quantity_Ticket()
+    {
+    }
+
+    public void add_Number_Ticket()
+    {
+        ShopTicketHUDC.instance.number_quantity_Buy++;
+        ShopTicketHUDC.instance.input_quantity_Buy.text = ShopTicketHUDC.instance.number_quantity_Buy.ToString();
+    }
+
+    public void reduce_Number_Ticket()
+    {
+
+        if (ShopTicketHUDC.instance.number_quantity_Buy == 0)
+        {
+            return;
+        }
+        ShopTicketHUDC.instance.number_quantity_Buy--;
+        ShopTicketHUDC.instance.input_quantity_Buy.text = ShopTicketHUDC.instance.number_quantity_Buy.ToString();
+
+    }
+
+
+
+    public void BuyTicket_byIndexQuantity()
+    {
+        if (DollarHUDC.instance.number_Dollar < ShopTicketHUDC.instance.number_quantity_Buy * ShopTicketHUDC.instance.cost_ticket[ShopTicketHUDC.instance.indexQuantity].cost)
+        {
+            StartCoroutine(notEnoughmoney());
+            return;
+        }
+      
+        DollarHUDC.instance.Dollar_text.SetText((DollarHUDC.instance.number_Dollar -= ShopTicketHUDC.instance.number_quantity_Buy * ShopTicketHUDC.instance.cost_ticket[ShopTicketHUDC.instance.indexQuantity].cost).ToString());
+        GameLoad.instance.numberTicket += ShopTicketHUDC.instance.number_quantity_Buy;
+    }
+
+
+   public IEnumerator nothasTicket()
+    {
+        nothasTicket_img.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        nothasTicket_img.SetActive(false);
     }
 
 
